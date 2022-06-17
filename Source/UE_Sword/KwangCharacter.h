@@ -33,19 +33,19 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	// Custom
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Attack")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
 		bool isAttacking;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Attack")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
 		bool saveAttack;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Attack")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
 		int attackNumber;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+		bool isBlocking;
 
-	//void Attack();
-
-	//UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Anims")
-	//	class UAnimMontage* KwangAttackA;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+		bool isSprinting;
 
 };

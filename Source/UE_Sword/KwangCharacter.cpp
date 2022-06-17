@@ -19,10 +19,12 @@ AKwangCharacter::AKwangCharacter()
 	bUseControllerRotationRoll = false;
 
 	// Configure Character Movement
-
 	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input
 	//GetCharacterMovement()->bUseControllerDesiredRotation = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 300.0f, 0.0f); // at this rotation rate
+
+	isBlocking = false;
+	isSprinting = false;
 }
 
 // Called when the game starts or when spawned
@@ -35,7 +37,7 @@ void AKwangCharacter::BeginPlay()
 void AKwangCharacter::MoveForward(float value)
 {
 
-	if ((Controller != NULL) && (value != 0.0f))
+	if ((Controller != NULL) && (value != 0.0f) && !isBlocking)
 	{
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
@@ -43,14 +45,16 @@ void AKwangCharacter::MoveForward(float value)
 
 		// Get Forward Vector
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+
 		AddMovementInput(Direction, value);
+
 	}
 }
 
 void AKwangCharacter::MoveRight(float value)
 {
 
-	if ((Controller != NULL) && (value != 0.0f))
+	if ((Controller != NULL) && (value != 0.0f) && !isBlocking)
 	{
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
@@ -58,6 +62,7 @@ void AKwangCharacter::MoveRight(float value)
 
 		// Get Right Vector
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
 		AddMovementInput(Direction, value);
 	}
 }
@@ -69,25 +74,6 @@ void AKwangCharacter::Tick(float DeltaTime)
 
 }
 
-//// Attack Method
-//void AKwangCharacter::Attack()
-//{
-//	if (isAttacking)
-//	{
-//		return;
-//	}
-//
-//	isAttacking = true;
-//
-//	// Plays Attack Montage A
-//	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
-//	if (AnimInstance && KwangAttackA)
-//	{
-//		AnimInstance->Montage_Play(KwangAttackA);
-//	}
-
-//}
-
 // Called to bind functionality to input
 void AKwangCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -98,6 +84,5 @@ void AKwangCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-	//PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &AKwangCharacter::Attack);
 }
 

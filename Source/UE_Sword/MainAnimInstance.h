@@ -21,7 +21,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = AnimationProperties)
 		void UpdateAnimationProperties(float DeltaTime);
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
 		float MovementSpeed;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
