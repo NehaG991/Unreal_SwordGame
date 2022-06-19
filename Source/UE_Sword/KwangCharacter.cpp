@@ -24,7 +24,6 @@ AKwangCharacter::AKwangCharacter()
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 300.0f, 0.0f); // at this rotation rate
 
 	isBlocking = false;
-	isSprinting = false;
 }
 
 // Called when the game starts or when spawned

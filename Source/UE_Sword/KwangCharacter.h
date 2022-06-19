@@ -45,7 +45,4 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
 		bool isBlocking;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool isSprinting;
-
 };
