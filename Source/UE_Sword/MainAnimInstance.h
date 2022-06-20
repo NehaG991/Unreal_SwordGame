@@ -33,7 +33,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
 		class APawn* Pawn;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
 		class AKwangCharacter* Main;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)

@@ -24,6 +24,10 @@ AKwangCharacter::AKwangCharacter()
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 300.0f, 0.0f); // at this rotation rate
 
 	isBlocking = false;
+	isQAttacking = false;
+	isRAttacking = false;
+	hasSword = true;
+	canMove = false;
 }
 
 // Called when the game starts or when spawned
@@ -36,7 +40,7 @@ void AKwangCharacter::BeginPlay()
 void AKwangCharacter::MoveForward(float value)
 {
 
-	if ((Controller != NULL) && (value != 0.0f) && !isBlocking)
+	if ((Controller != NULL) && (value != 0.0f) && canMove)
 	{
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
@@ -53,7 +57,7 @@ void AKwangCharacter::MoveForward(float value)
 void AKwangCharacter::MoveRight(float value)
 {
 
-	if ((Controller != NULL) && (value != 0.0f) && !isBlocking)
+	if ((Controller != NULL) && (value != 0.0f) && canMove)
 	{
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();

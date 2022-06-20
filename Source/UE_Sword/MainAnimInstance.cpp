@@ -54,6 +54,7 @@ void UMainAnimInstance::UpdateAnimationProperties(float DeltaTime)
 			Main = Cast<AKwangCharacter>(Pawn);
 		}
 
+
 		if (Main)
 		{
 			if (Main->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0)
