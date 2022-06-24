@@ -33,27 +33,30 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	// Custom
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool isAttacking;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool isAttacking;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool saveAttack;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool saveAttack;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		int attackNumber;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	int attackNumber;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool isBlocking;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool isBlocking;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool isQAttacking;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool isQAttacking;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool isRAttacking;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool isRAttacking;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
-		bool hasSword;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool hasSword;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
 		bool canMove;
+
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	//	bool isSprinting;
 };
